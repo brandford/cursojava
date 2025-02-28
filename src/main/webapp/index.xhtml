@@ -6,6 +6,19 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <h:outputLabel value="Retorno al viejo y querido JSF" />
+
+        <h:form id="formLogin">
+            <h:panelGrid columns="2">
+
+                <h:outputLabel value="Usuario: *" styleClass="colorText"></h:outputLabel>
+                <h:inputText id="txtUsuario" value="#{loginBean.usuario}" required="true" requiredMessage="El usuario es requerido"></h:inputText>
+
+                <h:outputLabel value="Contraseña: *" styleClass="colorText"></h:outputLabel>
+                <h:inputSecret id="txtPassword" value="#{loginBean.password}" required="true" requiredMessage="La contraseña es requerida"></h:inputSecret>      				
+
+                <h:commandButton value="Entrar" action="#{loginBean.ingresar(actionEvent)}"></h:commandButton>
+            </h:panelGrid>
+        </h:form>
+
     </h:body>
 </html>
